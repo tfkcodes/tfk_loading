@@ -86,11 +86,11 @@ class TfkLoading {
     final loadingWidget = LoadingWidget(
       lottie: lottie,
       gif: gif,
-      child: child,
       width: width,
       height: height,
       loadingText: loadingText,
       textStyle: textStyle,
+      child: child,
     );
 
     return OverlayEntry(

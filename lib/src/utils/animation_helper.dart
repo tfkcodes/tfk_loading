@@ -5,10 +5,10 @@ Widget applyAnimation(
     Widget child, LoadingAnimation animationType, Duration duration) {
   switch (animationType) {
     case LoadingAnimation.scale:
-      return ScaleTransition(scale: AlwaysStoppedAnimation(1.0), child: child);
+      return ScaleTransition(scale: const AlwaysStoppedAnimation(1.0), child: child);
     case LoadingAnimation.rotate:
       return RotationTransition(
-        turns: AlwaysStoppedAnimation(1.0),
+        turns: const AlwaysStoppedAnimation(1.0),
         child: child,
       );
 

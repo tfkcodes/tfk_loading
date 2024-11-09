@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
+  MyApp({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: navigatorKey,
@@ -20,25 +23,27 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Loading Overlay Example")),
+      appBar: AppBar(title: const Text("Loading Overlay Example")),
       backgroundColor: Colors.green,
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
             TfkLoading().show(
               child:
-                  Icon(Icons.hourglass_bottom, color: Colors.white, size: 80),
+                  const Icon(Icons.hourglass_bottom, color: Colors.white, size: 80),
               backgroundColor: Colors.black54,
             );
 
-            await Future.delayed(Duration(seconds: 12));
+            await Future.delayed(const Duration(seconds: 12));
 
             TfkLoading().hide();
           },
-          child: Text("Show Loading Overlay"),
+          child: const Text("Show Loading Overlay"),
         ),
       ),
     );

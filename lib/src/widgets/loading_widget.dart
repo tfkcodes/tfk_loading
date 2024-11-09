@@ -11,7 +11,7 @@ class LoadingWidget extends StatelessWidget {
   final TextStyle? textStyle;
 
   const LoadingWidget({
-    Key? key,
+    super.key,
     this.lottie,
     this.gif,
     this.child,
@@ -19,7 +19,7 @@ class LoadingWidget extends StatelessWidget {
     required this.height,
     this.loadingText,
     this.textStyle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class LoadingWidget extends StatelessWidget {
     } else if (child != null) {
       loadingIndicator = child!;
     } else {
-      loadingIndicator = CircularProgressIndicator();
+      loadingIndicator = const CircularProgressIndicator();
     }
 
     return Column(
